@@ -1,0 +1,8 @@
+extends base.pug
+block content
+  form(action='ya.ru', method='POST', name='select')
+    div.form-group      
+      input.form-control(type='email', aria-describedby='emailHelp',
+        placeholder='Enter first name')
+  button(type='submit').btn.btn-primary Submit
+
