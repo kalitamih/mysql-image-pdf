@@ -7,7 +7,7 @@ const User = require('./models/user');
 
 sequelize
   .sync()
-  .then(result => console.log(result))
+  .then(() => console.log('Connection is successfull'))
   .catch(err => console.log(err));
 
 const indexRouter = require('./routes/index');
