@@ -58,13 +58,13 @@ exports.postDisplayUsers = (req, res) => {
             savePDF(id);
           });
         });
-        res.render('users');
+        res.status(201).json({ message: true });
       } else {
-        res.render('nothing');
+        res.status(201).json({ message: false });
       }
     })
     .catch(() => {
-      res.status(500).render('error');
+      res.status(500).render('error', { message: 'Server error!' });
     });
 };
 

@@ -3,8 +3,6 @@ const path = require('path');
 const bodyParser = require('body-parser');
 const sequelize = require('./util/database');
 
-const User = require('./models/user');
-
 sequelize
   .sync()
   .then(() => console.log('Connection is successfull'))
@@ -26,7 +24,7 @@ app.use('/', indexRouter);
 
 // catch 404 and forward to error handler
 app.use((req, res) => {
-  res.status(404).render('error');
+  res.status(404).render('error', { message: 'Page not found!' });
 });
 
 const PORT = process.env.PORT || 5000;
